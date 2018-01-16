@@ -8,7 +8,7 @@ export class Main extends React.Component {
     //use the getLogin function to pass loginHandler to lower level: Login.js
     getLogin = () => {
         //Redirect will change the url on browser
-        return this.props.isLoggedIn? <Redirect to="/home"/>: <Login loginHandler={this.props.loginHandler}/>;
+        return this.props.isLoggedIn? <Redirect to="/home"/>: <Login handleLogin={this.props.handleLogin}/>;
     }
     getHome = () => {
         return this.props.isLoggedIn? <Home/> : <Redirect to="/login"/>;
