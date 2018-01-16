@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="872aa23f-b4b9-476a-920a-8825138f6bdf" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login.js" afterPath="$PROJECT_DIR$/src/components/Login.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/Register.js" afterPath="$PROJECT_DIR$/src/components/Register.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="12" column="65" lean-forward="true" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+            <state relative-caret-position="187">
+              <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <marker date="1516079015939" expanded="true" signature="1201:2254" ph="..." />
@@ -65,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Register.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Register.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="42" lean-forward="false" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+            <state relative-caret-position="289">
+              <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -172,8 +172,8 @@
         <option value="$PROJECT_DIR$/src/styles/Login.css" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/components/Main.js" />
-        <option value="$PROJECT_DIR$/src/components/Register.js" />
         <option value="$PROJECT_DIR$/src/components/Login.js" />
+        <option value="$PROJECT_DIR$/src/components/Register.js" />
       </list>
     </option>
   </component>
@@ -193,8 +193,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="846" />
-    <option name="y" value="14" />
+    <option name="x" value="840" />
+    <option name="y" value="4" />
     <option name="width" value="1086" />
     <option name="height" value="993" />
   </component>
@@ -378,15 +378,15 @@
       <option name="presentableId" value="Default" />
       <updated>1515641235721</updated>
       <workItem from="1515641238275" duration="8105000" />
-      <workItem from="1516071273433" duration="8309000" />
+      <workItem from="1516071273433" duration="8865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16414000" />
+    <option name="totallyTimeSpent" value="16970000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="846" y="14" width="1086" height="993" extended-state="0" />
+    <frame x="840" y="4" width="1086" height="993" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -627,20 +627,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="42" lean-forward="false" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="65" lean-forward="true" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+        <state relative-caret-position="187">
+          <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <marker date="1516079015939" expanded="true" signature="1201:2254" ph="..." />
@@ -648,6 +638,16 @@
             <marker date="1516079015939" expanded="true" signature="1600:1961" ph="..." />
             <marker date="1516079015939" expanded="true" signature="1988:2234" ph="..." />
             <marker date="1516079015939" expanded="true" signature="2080:2141" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
