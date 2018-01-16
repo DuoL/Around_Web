@@ -16,10 +16,14 @@ class App extends Component {
         localStorage.setItem(TOKEN_KEY, response);
         this.setState({isLoggedIn: true});
     }
+    logoutHandler = () => {
+        localStorage.removeItem(TOKEN_KEY);
+        this.setState({isLoggedIn: false});
+    }
   render() {
     return (
       <div className="App">
-          <Header isLoggedIn={this.state.isLoggedIn}/>
+          <Header isLoggedIn={this.state.isLoggedIn} logoutHandler={this.logoutHandler}/>
           <Main isLoggedIn={this.state.isLoggedIn} loginHandler={this.loginHandler}/>
       </div>
     );
