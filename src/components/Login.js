@@ -20,7 +20,6 @@ class NormalLoginForm extends React.Component {
                     }),
                 }).then((response)=> {
                     this.props.loginHandler(response);
-                    message.success(response);
                 }, (error)=>{
                     message.error(error.responseText);
                 }).catch((error) => {
