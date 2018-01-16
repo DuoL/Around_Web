@@ -18,7 +18,8 @@ class NormalLoginForm extends React.Component {
                        username: values.username,
                        password: values.password,
                     }),
-                }).then((response)=>{
+                }).then((response)=> {
+                    this.props.loginHandler(response);
                     message.success(response);
                 }, (error)=>{
                     message.error(error.responseText);
