@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import { Tabs, Button, Spin } from 'antd';
 import { GEO_OPTIONS ,POST_KEY, API_ROOT, AUTH_PREFIX , TOKEN_KEY } from "../constants";
-
+import { Gallery} from "./Gallery";
 
 const TabPane = Tabs.TabPane;
 const operations = <Button>Extra Action</Button>;
@@ -11,6 +11,7 @@ export class Home extends React.Component {
     state = {
         loadingGeoLocation: false,
         loadingPosts: false,
+        posts: [],
         error: '',
     }
     //do resource loading should be in this life circle
@@ -53,8 +54,21 @@ export class Home extends React.Component {
             return <Spin tip="Loading geolocation..."/>;
         } else if (this.state.loadingPosts){
             return <Spin tip="Loading posts..."/>;
+        } else if (this.state.posts && this.state.posts.length > 0) {
+                const images = this.state.posts.map((post) => {
+                    return {
+                        user: post.user,
+                        src: post.url,
+                        thumbnail: post.url,
+                        thumbnailWidth: 400,
+                        thumbnailHeight: 300,
+                        caption: post.message,
+                    }
+
+            });
+                return <Gallery images={images}/>
         } else {
-            return null;
+        return null;
         }
     }
     loadNearbyPosts = () => {
@@ -68,7 +82,7 @@ export class Home extends React.Component {
                 Authorization: `${AUTH_PREFIX} ${localStorage.getItem(TOKEN_KEY)}`
             },
         }).then((response)=>{
-            this.setState({loadingPosts: false, error:''});
+            this.setState({posts: response, loadingPosts: false, error:''});
             console.log(response);
         }, (error)=>{
             this.setState({loadingPosts: false, error: error.responseText});
