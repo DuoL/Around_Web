@@ -10,6 +10,7 @@ const operations = <Button>Extra Action</Button>;
 export class Home extends React.Component {
     state = {
         loadingGeoLocation: false,
+        loadingPosts: false,
         error: '',
     }
     //do resource loading should be in this life circle
@@ -50,11 +51,14 @@ export class Home extends React.Component {
             return <div>{this.state.error}</div>
         } else if (this.state.loadingGeoLocation) {
             return <Spin tip="Loading geolocation..."/>;
+        } else if (this.state.loadingPosts){
+            return <Spin tip="Loading posts..."/>;
         } else {
-            return
+            return null;
         }
     }
     loadNearbyPosts = () => {
+        this.setState({loadingPosts: true, error:''});
         //parse the string and use destructor to get lat and lon
         const { lat, lon } = JSON.parse(localStorage.getItem(POST_KEY));
         $.ajax({
@@ -64,8 +68,10 @@ export class Home extends React.Component {
                 Authorization: `${AUTH_PREFIX} ${localStorage.getItem(TOKEN_KEY)}`
             },
         }).then((response)=>{
+            this.setState({loadingPosts: false, error:''});
             console.log(response);
         }, (error)=>{
+            this.setState({loadingPosts: false, error: error.responseText});
             console.log(error);
         }).catch((error)=>{
             console.log(error);
