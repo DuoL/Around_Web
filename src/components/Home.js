@@ -1,7 +1,8 @@
 import React from 'react';
-import { Tabs, Button } from 'antd';
-import { GEO_OPTIONS } from "../constants";
-import { Spin } from 'antd';
+import $ from 'jquery';
+import { Tabs, Button, Spin } from 'antd';
+import { GEO_OPTIONS ,POST_KEY, API_ROOT, AUTH_PREFIX , TOKEN_KEY } from "../constants";
+
 
 const TabPane = Tabs.TabPane;
 const operations = <Button>Extra Action</Button>;
@@ -34,6 +35,9 @@ export class Home extends React.Component {
     onSuccessLoadGeolocation = (position) => {
         console.log(position);
         this.setState({ loadingGeoLocation: false, error: ''});
+        const { latitude, longitude} = position.coords;
+        localStorage.setItem(POST_KEY, JSON.stringify({lat: latitude, lon: longitude}));
+        this.loadNearbyPosts();
     }
 
     onFailedLoadGeolocation = () => {
@@ -49,6 +53,23 @@ export class Home extends React.Component {
         } else {
             return
         }
+    }
+    loadNearbyPosts = () => {
+        //parse the string and use destructor to get lat and lon
+        const { lat, lon } = JSON.parse(localStorage.getItem(POST_KEY));
+        $.ajax({
+            url: `${API_ROOT}/search?lat=${lat}&lon=${lon}&range=200000`,
+            method: 'GET',
+            headers: {
+                Authorization: `${AUTH_PREFIX} ${localStorage.getItem(TOKEN_KEY)}`
+            },
+        }).then((response)=>{
+            console.log(response);
+        }, (error)=>{
+            console.log(error);
+        }).catch((error)=>{
+            console.log(error);
+        });
     }
     //do clear resource should be in willMount life circle
     //if we want to insert a java script we need to use {} and it must return a value
