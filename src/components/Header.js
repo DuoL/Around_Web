@@ -1,7 +1,7 @@
 import React from "react"
 import logo from '../assets/images/logo.svg';
 import { Icon } from 'antd';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 export class Header extends React.Component {
     render() {
