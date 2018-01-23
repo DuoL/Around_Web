@@ -78,8 +78,8 @@ export class Home extends React.Component {
         this.setState({loadingPosts: true, error:''});
         //parse the string and use destructor to get lat and lon
         const { lat, lon } = JSON.parse(localStorage.getItem(POST_KEY));
-        $.ajax({
-            url: `${API_ROOT}/search?lat=${lat}&lon=${lon}&range=200000`,
+        return $.ajax({
+            url: `${API_ROOT}/search?lat=${lat}&lon=${lon}&range=20000`,
             method: 'GET',
             headers: {
                 Authorization: `${AUTH_PREFIX} ${localStorage.getItem(TOKEN_KEY)}`
@@ -97,7 +97,7 @@ export class Home extends React.Component {
     //do clear resource should be in willMount life circle
     //if we want to insert a java script we need to use {} and it must return a value
     render() {
-        const createPostButton = <CreatePostButton/>
+        const createPostButton = <CreatePostButton loadNearbyPosts={this.loadNearbyPosts}/>
         return (
                 <Tabs tabBarExtraContent={createPostButton} className="main-tabs">
                     <TabPane tab="Posts" key="1">

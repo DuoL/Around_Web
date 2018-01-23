@@ -19,7 +19,6 @@ export class CreatePostButton extends React.Component {
 
         this.form.validateFields((err, values) =>{
             if (!err) {
-                console.log(values);
                 const {lat, lon} = JSON.parse(localStorage.getItem(POST_KEY));
                 //this is like a map : key,value pair used to wrapper the data into one
                 //we use a random hash to split the location into diff parts
@@ -33,27 +32,30 @@ export class CreatePostButton extends React.Component {
                 $.ajax({
                     method: 'POST',
                     url: `${API_ROOT}/post`,
-                    dataType: 'test',
+                    dataType: 'text',
                     data: formData,
                     headers: {
                         Authorization: `${AUTH_PREFIX} ${localStorage.getItem(TOKEN_KEY)}`,
                     },
                     processData: false,
                     contentType: false,
-
+                }).then((response) => {
+                    this.form.resetFields();
+                    console.log("Success");
+                    message.success('created a post successfully.');
+                },(error) => {
+                    this.form.resetFields();
+                    message.error(error.responseText);
                 }).then(() => {
-                    this.setState({visible: false, confirmLoading: false});
-                },() => {
-                    this.setState({visible: false, confirmLoading: false});
-                }).catch(() => {
-                    message.error('create post failed')
+                    this.props.loadNearbyPosts().then(() => {
+                        this.setState({visible: false, confirmLoading: false});
+                    });
+                }).catch((error) => {
+                    message.error('create post failed');
+                    console.log(error);
                 });
             }
         });
-
-        setTimeout(() => {
-
-        }, 2000);
     }
     handleCancel = () => {
         this.setState({
