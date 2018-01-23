@@ -1,5 +1,7 @@
 import React from 'react';
-import { Modal, Button } from 'antd';
+import { Modal, Button, message } from 'antd';
+import $ from 'jquery';
+import { API_ROOT, POST_KEY, AUTH_PREFIX, TOKEN_KEY } from "../constants";
 import { WrappedCreatePostForm } from "./CreateButtonForm";
 
 export class CreatePostButton extends React.Component {
@@ -13,20 +15,53 @@ export class CreatePostButton extends React.Component {
         });
     }
     handleOk = () => {
-        this.setState({
-            confirmLoading: true,
+
+
+        this.form.validateFields((err, values) =>{
+            if (!err) {
+                console.log(values);
+                const {lat, lon} = JSON.parse(localStorage.getItem(POST_KEY));
+                //this is like a map : key,value pair used to wrapper the data into one
+                //we use a random hash to split the location into diff parts
+                const formData = new FormData();
+                formData.set('lat', lat + Math.random() * 0.1 - 0.05);
+                formData.set('lon', lon + Math.random() * 0.1 - 0.05);
+                formData.set('message', values.message);
+                formData.set('image', values.image[0]);
+
+                this.setState({ confirmLoading: true});
+                $.ajax({
+                    method: 'POST',
+                    url: `${API_ROOT}/post`,
+                    dataType: 'test',
+                    data: formData,
+                    headers: {
+                        Authorization: `${AUTH_PREFIX} ${localStorage.getItem(TOKEN_KEY)}`,
+                    },
+                    processData: false,
+                    contentType: false,
+
+                }).then(() => {
+                    this.setState({visible: false, confirmLoading: false});
+                },() => {
+                    this.setState({visible: false, confirmLoading: false});
+                }).catch(() => {
+                    message.error('create post failed')
+                });
+            }
         });
+
         setTimeout(() => {
-            this.setState({
-                visible: false,
-                confirmLoading: false,
-            });
+
         }, 2000);
     }
     handleCancel = () => {
         this.setState({
             visible: false,
         });
+    }
+    saveFomRef = (form) => {
+        this.form = form;
     }
     render() {
         const { visible, confirmLoading} = this.state;
@@ -41,7 +76,7 @@ export class CreatePostButton extends React.Component {
                        onCancel={this.handleCancel}
                        cancelText="Cancel"
                 >
-                    <WrappedCreatePostForm/>
+                    <WrappedCreatePostForm ref={this.saveFomRef}/>
                 </Modal>
             </div>
         );

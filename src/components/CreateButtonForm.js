@@ -2,6 +2,9 @@ import React from 'react';
 import {  Form, Input, Upload, Icon } from 'antd';
 const FormItem = Form.Item;
 class CreatePostForm extends React.Component {
+    beforeUpload= () => {
+        return false;
+    }
     normFile = (e) => {
         console.log('Upload event:', e);
         if (Array.isArray(e)) {
@@ -36,7 +39,7 @@ class CreatePostForm extends React.Component {
                             getValueFromEvent: this.normFile,
                             rules: [{ required: true, message: 'Please select an image!' }],
                         })(
-                            <Upload.Dragger name="files" action="/upload.do">
+                            <Upload.Dragger name="files" beforeUpload={this.beforeUpload}>
                                 <p className="ant-upload-drag-icon">
                                     <Icon type="inbox" />
                                 </p>
