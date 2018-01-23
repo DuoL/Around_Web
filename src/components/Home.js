@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import { Tabs, Button, Spin } from 'antd';
+import { Tabs, Spin } from 'antd';
 import { GEO_OPTIONS ,POST_KEY, API_ROOT, AUTH_PREFIX , TOKEN_KEY } from "../constants";
 import { Gallery } from "./Gallery";
 import { CreatePostButton } from "./CreatePostButton"
