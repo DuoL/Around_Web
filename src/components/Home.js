@@ -2,10 +2,11 @@ import React from 'react';
 import $ from 'jquery';
 import { Tabs, Button, Spin } from 'antd';
 import { GEO_OPTIONS ,POST_KEY, API_ROOT, AUTH_PREFIX , TOKEN_KEY } from "../constants";
-import { Gallery} from "./Gallery";
+import { Gallery } from "./Gallery";
+import { CreatePostButton } from "./CreatePostButton"
 
 const TabPane = Tabs.TabPane;
-const operations = <Button>Extra Action</Button>;
+
 
 export class Home extends React.Component {
     state = {
@@ -55,7 +56,9 @@ export class Home extends React.Component {
         } else if (this.state.loadingPosts){
             return <Spin tip="Loading posts..."/>;
         } else if (this.state.posts && this.state.posts.length > 0) {
+            //[1,2,3].map(f) => [f(1),f(2),f(3)]
                 const images = this.state.posts.map((post) => {
+                    //format the image's attributes
                     return {
                         user: post.user,
                         src: post.url,
@@ -94,8 +97,9 @@ export class Home extends React.Component {
     //do clear resource should be in willMount life circle
     //if we want to insert a java script we need to use {} and it must return a value
     render() {
+        const createPostButton = <CreatePostButton/>
         return (
-                <Tabs tabBarExtraContent={operations} className="main-tabs">
+                <Tabs tabBarExtraContent={createPostButton} className="main-tabs">
                     <TabPane tab="Posts" key="1">
                     {this.getGalleryContent()}
                         </TabPane>
