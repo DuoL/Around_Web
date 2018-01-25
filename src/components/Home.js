@@ -79,7 +79,7 @@ export class Home extends React.Component {
         //parse the string and use destructor to get lat and lon
         const { lat, lon } = JSON.parse(localStorage.getItem(POS_KEY));
         return $.ajax({
-            url: `${API_ROOT}/search?lat=${lat}&lon=${lon}&range=20000`,
+            url: `${API_ROOT}/search?lat=${lat}&lon=${lon}&range=20`,
             method: 'GET',
             headers: {
                 Authorization: `${AUTH_PREFIX} ${localStorage.getItem(TOKEN_KEY)}`
