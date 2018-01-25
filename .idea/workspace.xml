@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="872aa23f-b4b9-476a-920a-8825138f6bdf" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/components/AroundMap.js" afterPath="$PROJECT_DIR$/src/components/AroundMap.js" />
       <change beforePath="$PROJECT_DIR$/src/components/Home.js" afterPath="$PROJECT_DIR$/src/components/Home.js" />
     </list>
@@ -54,25 +53,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Home.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="78" column="92" lean-forward="false" selection-start-line="78" selection-start-column="92" selection-end-line="78" selection-end-column="92" />
+            <state relative-caret-position="476">
+              <caret line="82" column="72" lean-forward="false" selection-start-line="82" selection-start-column="72" selection-end-line="82" selection-end-column="72" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <marker date="1516858153399" expanded="true" signature="3799:4631" ph="..." />
-                <marker date="1516858153399" expanded="true" signature="3849:3931" ph="..." />
+                <marker date="1516858532688" expanded="true" signature="3915:4747" ph="..." />
+                <marker date="1516858532688" expanded="true" signature="3965:4047" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AroundMap.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AroundMap.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/AroundMap.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+            <state relative-caret-position="204">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -193,8 +192,8 @@
         <option value="$PROJECT_DIR$/src/styles/App.css" />
         <option value="$PROJECT_DIR$/src/styles/AroundMarker.css" />
         <option value="$PROJECT_DIR$/src/components/AroundMarker.js" />
-        <option value="$PROJECT_DIR$/src/components/AroundMap.js" />
         <option value="$PROJECT_DIR$/src/components/Home.js" />
+        <option value="$PROJECT_DIR$/src/components/AroundMap.js" />
       </list>
     </option>
   </component>
@@ -214,8 +213,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="928" />
-    <option name="y" value="4" />
+    <option name="x" value="850" />
+    <option name="y" value="9" />
     <option name="width" value="1075" />
     <option name="height" value="1031" />
   </component>
@@ -407,15 +406,15 @@
       <workItem from="1516085250081" duration="215000" />
       <workItem from="1516244092300" duration="11092000" />
       <workItem from="1516676252199" duration="12054000" />
-      <workItem from="1516849122140" duration="8943000" />
+      <workItem from="1516849122140" duration="9601000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54175000" />
+    <option name="totallyTimeSpent" value="54833000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="928" y="4" width="1075" height="1031" extended-state="0" />
+    <frame x="850" y="9" width="1075" height="1031" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -507,8 +506,8 @@
           <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <marker date="1516858153399" expanded="true" signature="3799:4631" ph="..." />
-            <marker date="1516858153399" expanded="true" signature="3849:3931" ph="..." />
+            <marker date="1516858532688" expanded="true" signature="3915:4747" ph="..." />
+            <marker date="1516858532688" expanded="true" signature="3965:4047" ph="..." />
           </folding>
         </state>
       </provider>
@@ -606,8 +605,8 @@
           <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <marker date="1516858153399" expanded="true" signature="3799:4631" ph="..." />
-            <marker date="1516858153399" expanded="true" signature="3849:3931" ph="..." />
+            <marker date="1516858532688" expanded="true" signature="3915:4747" ph="..." />
+            <marker date="1516858532688" expanded="true" signature="3965:4047" ph="..." />
           </folding>
         </state>
       </provider>
@@ -900,16 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AroundMap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -920,12 +909,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="78" column="92" lean-forward="false" selection-start-line="78" selection-start-column="92" selection-end-line="78" selection-end-column="92" />
+        <state relative-caret-position="476">
+          <caret line="82" column="72" lean-forward="false" selection-start-line="82" selection-start-column="72" selection-end-line="82" selection-end-column="72" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <marker date="1516858153399" expanded="true" signature="3799:4631" ph="..." />
-            <marker date="1516858153399" expanded="true" signature="3849:3931" ph="..." />
+            <marker date="1516858532688" expanded="true" signature="3915:4747" ph="..." />
+            <marker date="1516858532688" expanded="true" signature="3965:4047" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AroundMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
