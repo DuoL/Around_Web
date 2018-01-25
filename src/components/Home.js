@@ -74,10 +74,9 @@ export class Home extends React.Component {
         return null;
         }
     }
-    loadNearbyPosts = () => {
-        this.setState({loadingPosts: true, error:''});
+    loadNearbyPosts = (location) => {
         //parse the string and use destructor to get lat and lon
-        const { lat, lon } = JSON.parse(localStorage.getItem(POS_KEY));
+        const { lat, lon } = location ? location: JSON.parse(localStorage.getItem(POS_KEY));
         return $.ajax({
             url: `${API_ROOT}/search?lat=${lat}&lon=${lon}&range=20`,
             method: 'GET',
@@ -107,9 +106,10 @@ export class Home extends React.Component {
                         <WrappedAroundMap
                             googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"
                             loadingElement={<div style={{ height: `100%` }} />}
-                            containerElement={<div style={{ height: `400px` }} />}
+                            containerElement={<div style={{ height: `600px` }} />}
                             mapElement={<div style={{ height: `100%` }} />}
                             posts={this.state.posts}
+                            loadNearbyPosts={this.loadNearbyPosts}
                         />
                     </TabPane>
                 </Tabs>
