@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, Button, message } from 'antd';
 import $ from 'jquery';
 import { API_ROOT, POST_KEY, AUTH_PREFIX, TOKEN_KEY } from "../constants";
-import { WrappedCreatePostForm } from "./CreateButtonForm";
+import { WrappedCreatePostForm } from "./CreatePostForm";
 
 export class CreatePostButton extends React.Component {
     state = {
