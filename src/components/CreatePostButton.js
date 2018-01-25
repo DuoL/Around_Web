@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Button, message } from 'antd';
 import $ from 'jquery';
-import { API_ROOT, POST_KEY, AUTH_PREFIX, TOKEN_KEY } from "../constants";
+import { API_ROOT, POS_KEY, AUTH_PREFIX, TOKEN_KEY } from "../constants";
 import { WrappedCreatePostForm } from "./CreatePostForm";
 
 export class CreatePostButton extends React.Component {
@@ -17,7 +17,7 @@ export class CreatePostButton extends React.Component {
     handleOk = () => {
         this.form.validateFields((err, values) =>{
             if (!err) {
-                const {lat, lon} = JSON.parse(localStorage.getItem(POST_KEY));
+                const {lat, lon} = JSON.parse(localStorage.getItem(POS_KEY));
                 //this is like a map : key,value pair used to wrapper the data into one
                 //we use a random hash to split the location into diff parts
                 const formData = new FormData();

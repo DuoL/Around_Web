@@ -1,7 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import { Tabs, Spin } from 'antd';
-import { GEO_OPTIONS ,POST_KEY, API_ROOT, AUTH_PREFIX , TOKEN_KEY } from "../constants";
+import { GEO_OPTIONS ,POS_KEY, API_ROOT, AUTH_PREFIX , TOKEN_KEY } from "../constants";
 import { Gallery } from "./Gallery";
 import { CreatePostButton } from "./CreatePostButton";
 import { WrappedAroundMap } from './AroundMap.js';
@@ -39,7 +39,7 @@ export class Home extends React.Component {
         console.log(position);
         this.setState({ loadingGeoLocation: false, error: ''});
         const { latitude, longitude} = position.coords;
-        localStorage.setItem(POST_KEY, JSON.stringify({lat: latitude, lon: longitude}));
+        localStorage.setItem(POS_KEY, JSON.stringify({lat: latitude, lon: longitude}));
         this.loadNearbyPosts();
     }
 
@@ -77,7 +77,7 @@ export class Home extends React.Component {
     loadNearbyPosts = () => {
         this.setState({loadingPosts: true, error:''});
         //parse the string and use destructor to get lat and lon
-        const { lat, lon } = JSON.parse(localStorage.getItem(POST_KEY));
+        const { lat, lon } = JSON.parse(localStorage.getItem(POS_KEY));
         return $.ajax({
             url: `${API_ROOT}/search?lat=${lat}&lon=${lon}&range=20000`,
             method: 'GET',
@@ -109,6 +109,7 @@ export class Home extends React.Component {
                             loadingElement={<div style={{ height: `100%` }} />}
                             containerElement={<div style={{ height: `400px` }} />}
                             mapElement={<div style={{ height: `100%` }} />}
+                            posts={this.state.posts}
                         />
                     </TabPane>
                 </Tabs>
